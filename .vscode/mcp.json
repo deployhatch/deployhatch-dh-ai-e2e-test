@@ -1,0 +1,19 @@
+{
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "deployhatch-agent-token",
+      "description": "Deploy Hatch Agent credential",
+      "password": true
+    }
+  ],
+  "servers": {
+    "deployhatch": {
+      "type": "http",
+      "url": "https://deployhatch.com/api/mcp",
+      "headers": {
+        "Authorization": "Bearer ${input:deployhatch-agent-token}"
+      }
+    }
+  }
+}

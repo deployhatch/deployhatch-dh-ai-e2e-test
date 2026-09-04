@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#173f5f" />
+    <title>Reel Shelf | Movie Collection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="/" aria-label="Reel Shelf home">
+          <span class="brand-mark" aria-hidden="true">RS</span>
+          <span>Reel Shelf</span>
+        </a>
+        <p class="header-note">Your watchlist, with a little staying power.</p>
+      </header>
+
+      <section class="intro" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">Personal archive</p>
+          <h1 id="page-title">Movies worth<br /><em>remembering.</em></h1>
+        </div>
+        <p class="intro-copy">Keep a running record of the films that made an impression, from first watch to forever favorite.</p>
+      </section>
+
+      <section class="workspace" aria-label="Movie collection workspace">
+        <form class="movie-form" id="movie-form">
+          <div class="form-heading">
+            <span class="step">01</span>
+            <div>
+              <h2>Add a movie</h2>
+              <p>Capture the details while they are fresh.</p>
+            </div>
+          </div>
+
+          <label for="title">Title <span aria-hidden="true">*</span></label>
+          <input id="title" name="title" type="text" placeholder="e.g. Before Sunrise" maxlength="100" required />
+
+          <label for="rating">Your rating <span aria-hidden="true">*</span></label>
+          <div class="rating-picker" id="rating-picker" role="group" aria-label="Rating from 1 to 10">
+            <span class="rating-value" id="rating-value">—</span>
+            <input id="rating" name="rating" type="range" min="1" max="10" value="8" />
+            <span class="rating-max">10</span>
+          </div>
+
+          <label for="notes">Notes <span class="optional">Optional</span></label>
+          <textarea id="notes" name="notes" rows="4" maxlength="500" placeholder="What stayed with you?"></textarea>
+
+          <button class="primary-button" type="submit">
+            <span>Add to collection</span>
+            <span aria-hidden="true">&#8594;</span>
+          </button>
+          <p class="form-message" id="form-message" role="status"></p>
+        </form>
+
+        <div class="collection-panel">
+          <div class="collection-heading">
+            <div>
+              <span class="step">02</span>
+              <h2>Your collection <span class="count" id="movie-count">0</span></h2>
+            </div>
+            <button class="clear-button" id="clear-all" type="button" hidden>Clear all</button>
+          </div>
+          <div class="movie-list" id="movie-list" aria-live="polite"></div>
+          <div class="empty-state" id="empty-state">
+            <div class="empty-reel" aria-hidden="true">&#9673;</div>
+            <h3>The shelf is waiting.</h3>
+            <p>Your first movie will appear here.</p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site-footer"><span>REEL SHELF</span><span>Keep the good ones close.</span></footer>
+    </main>
+  </body>
+</html>
