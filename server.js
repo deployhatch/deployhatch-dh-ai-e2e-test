@@ -12,7 +12,7 @@ const mimeTypes = {
   '.svg': 'image/svg+xml',
 };
 
-const server = http.createServer((request, response) => {
+const server = http.createServer((request, response) {
   const requestedPath = request.url === '/' ? '/index.html' : request.url;
   const filePath = path.normalize(path.join(publicDirectory, requestedPath));
 
