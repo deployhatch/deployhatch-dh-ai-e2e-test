@@ -2,7 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const port = Number(process.env.PORT) || ;
+const port = Number(process.env.PORT) || 3000;
 const publicDirectory = path.join(__dirname, 'public');
 const mimeTypes = {
   '.css': 'text/css; charset=utf-8',
